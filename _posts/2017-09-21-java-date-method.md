@@ -7,26 +7,26 @@ tags: [java]
 description: 时间工具类
 ---
 
-介绍一个java实现的时间工具类
-### TimeUtils
-时间工具类
-- millis2String : 将时间戳转为时间字符串
-- string2Millis : 将时间字符串转为时间戳
-- string2Date : 将时间字符串转为Date类型
-- date2String : 将Date类型转为时间字符串
-- date2Millis : 将Date类型转为时间戳
-- millis2Date : 将时间戳转为Date类型
-- dateReckon : 日期+-天数
-- getNowTimeMills : 获取当前毫秒时间戳
-- getNowTimeString : 获取当前时间字符串
-- getNowTimeDate : 获取当前Date
-- getWeek, getWeekIndex : 获取星期
-- getWeekOfMonth : 获取月份中的第几周
-- getWeekOfYear : 获取年份中的第几周
-- parseMillisecone : 时间差计算 return string 0天0时11分55秒
-- getDifference ：时间差计算 return int
-- getChineseZodiac : 获取生肖
-- getZodiac : 获取星座
+### 介绍一个java实现的时间工具类
+TimeUtils.java
+> 时间工具类
+>- millis2String : 将时间戳转为时间字符串
+>- string2Millis : 将时间字符串转为时间戳
+>- string2Date : 将时间字符串转为Date类型
+>- date2String : 将Date类型转为时间字符串
+>- date2Millis : 将Date类型转为时间戳
+>- millis2Date : 将时间戳转为Date类型
+>- dateReckon : 日期+-天数
+>- getNowTimeMills : 获取当前毫秒时间戳
+>- getNowTimeString : 获取当前时间字符串
+>- getNowTimeDate : 获取当前Date
+>- getWeek, getWeekIndex : 获取星期
+>- getWeekOfMonth : 获取月份中的第几周
+>- getWeekOfYear : 获取年份中的第几周
+>- parseMillisecone : 时间差计算 return string 0天0时11分55秒
+>- getDifference ：时间差计算 return int
+>- getChineseZodiac : 获取生肖
+>- getZodiac : 获取星座
 注意：SimpleDateFormat不是线程安全的，线程安全需用{@code ThreadLocal<SimpleDateFormat>}
 ```java
 package com.pactera.base.utils;
