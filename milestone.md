@@ -16,7 +16,7 @@ header-img: "img/zhihu.jpg"
 
 - [《Java基础算法》](https://github.com/RuanHR/Java-Base)
 
-- [《Java开发实现方法》](https://github.com/RuanHR/Java-Project-Method)
+- [《SpringBoot开发实战》](https://github.com/RuanHR/Spring-Boot-Project)
 
 - [《python爬虫进阶》](https://github.com/RuanHR/Python-Reptile)
 
