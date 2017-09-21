@@ -7,19 +7,19 @@ tags: [java]
 description: swagger implements
 ---
 
-# spring-boot-starter-swagger
+## spring-boot-starter-swagger
 该项目是spring-boot与`swagger`的整合，[swagger](https://swagger.io/)是一款高效易用的嵌入式文档插件。引入该项目，可以让你的api发布更容易，修改发布更快捷，团队交流更高效。
 
-## 本项目特点
+### 本项目特点
 
 - 通过spring-boot方式配置的swagger实现，完美并且完整的支持swagger-spring的配置项。
 - 配置及其简单，容易上手。
 - 支持api分组配置，通过正则表达式方式分组。
 - 支持分环境配置，你可以s很容易让你的项目api文档在开发环境，测试环境，预发布环境查看，而在生产环境不可查看。
 
+### 快速入门
 
-## 快速入门
-#### 1.在maven管理的spring-boot项目中引入依赖,（建议使用spring-boot版本1.4以上,1.4以下未测试过）
+1.在maven管理的spring-boot项目中引入依赖,（建议使用spring-boot版本1.4以上,1.4以下未测试过）
 ```xml
     <dependency>
         <groupId>com.gitee.reger</groupId>
@@ -27,7 +27,8 @@ description: swagger implements
         <version>${spring-boot-starter-swagger.version}</version>
     </dependency>
 ```
-#### 2.在spring-boot项目增加配置文件'application-api.yml',在其中配置swagger的信息，如下
+
+2.在spring-boot项目增加配置文件'application-api.yml',在其中配置swagger的信息，如下
 ```yml
 spring:
   swagger-group:
@@ -59,10 +60,8 @@ spring:
 在prod环境不要启用api，只需要'application-prod.yml'中不要在profiles下include和active中包含'api'关键字。
 
 #### 4.配置java代码的文档注解
-①. model类中增加配置注解
-model中常用的注解：@ApiModel 注解类名，@ApiModelProperty 注解方法或者参数名，
-
-例如
+1.model类中增加配置注解
+model中常用的注解：@ApiModel 注解类名，@ApiModelProperty 注解方法或者参数名，例如：
 ```java
 @ApiModel("输出用户数据的类")
 public class User implements Serializable {
@@ -78,9 +77,11 @@ public class User implements Serializable {
 }
 
 ```
-②. 控制器中增加配置注解
-
-控制器中常用的注解： @Api 注解控制器显示的标识，有tags和description可以配置控制器显示的标识;@ApiOperation 用来注解控制器方法显示的标识； @ApiParam 用来注解控制器方法参数的名字，控制器方法在文档中需要显示的默认值
+2.控制器中增加配置注解
+> 控制器中常用的注解：
+>- @Api 注解控制器显示的标识，有tags和description可以配置控制器显示的标识;
+>- @ApiOperation 用来注解控制器方法显示的标识；
+>- @ApiParam 用来注解控制器方法参数的名字，控制器方法在文档中需要显示的默认值
 
 例如
 ```java
@@ -98,13 +99,32 @@ public class UserController {
     }
 }
 ```
-③.其它一些注解
+3.其它一些注解
+> swagger的注解主要在包‘io.swagger.annotations’下，除了以上描述的注解外，还有
+>- @ApiImplicitParam
+>- @ApiImplicitParams
+>- @ApiKeyAuthDefinition
+>- @ApiResponse
+>- @ApiResponses
+>- @Authorization
+>- @AuthorizationScope
+>- @BasicAuthDefinition
+>- @Contact
+>- @Example
+>- @ExampleProperty
+>- @Extension
+>- @ExtensionProperty
+>- @ExternalDocs
+>- @Info
+>- @License
+>- @OAuth2Definition
+>- @ResponseHeader
+>- @Scope
+>- @SecurityDefinition
+>- @SwaggerDefinition
+>- @Tag
 
-swagger的注解主要在包‘io.swagger.annotations’下，除了以上描述的注解外，还有@ApiImplicitParam,@ApiImplicitParams,@ApiKeyAuthDefinition,@ApiResponse,@ApiResponses,@Authorization,@AuthorizationScope,@BasicAuthDefinition,@Contact,@Example,@ExampleProperty,@Extension,@ExtensionProperty,@ExternalDocs,@Info,@License,@OAuth2Definition,@ResponseHeader,@Scope,@SecurityDefinition,@SwaggerDefinition,@Tag
-
-除了swagger自己定义的注解外，还有部分校验注解,注解所在包‘javax.validation.constraints’下，像@Max，@Min,@Size这些也是可用的。
-
-由于这些注解，我觉得swagger中可有可无，就不写描述了。
+除了swagger自己定义的注解外，还有部分校验注解,注解所在包‘javax.validation.constraints’下，像@Max，@Min,@Size这些也是可用的。由于这些注解，我觉得swagger中可有可无，就不写描述了。
 
 
 #### 5.查看文档
@@ -117,20 +137,17 @@ java -jar swagger-example.jar --spring.profiles.active=dev --server.port=8080
 浏览器便可以展示出swagger的html页面
 
 
-## 生成客户端代码
+### 生成客户端代码
 生成客户端代码，是swagger官方提供的功能。在时间充足的情况下，最好还是自己写，必定自己写的代码更具有持续维护性。但是如果时间有限的情况下，使用它开发客户端调用程序，也不失是一种有效解决办法。
-使用方法
+使用方法:
+1.下载文档的描述json
+> 下载地址，http://{服务启动主机地址}:{服务启动端口}/v2/api-docs?group={需要生成的api所属组name}，如果需要下上边‘01.user-api’组的的json文档地址,并且服务启动在本地8080端口上，可以[点击这里](http://127.0.0.1:8080/v2/api-docs?group=01.user-api)下载。
 
-①. 下载文档的描述json
-
-下载地址，http://{服务启动主机地址}:{服务启动端口}/v2/api-docs?group={需要生成的api所属组name}，如果需要下上边‘01.user-api’组的的json文档地址,并且服务启动在本地8080端口上，可以[点击这里](http://127.0.0.1:8080/v2/api-docs?group=01.user-api)下载。
-
-② 生成客户端代码
-
-打开[swagger-editor](https://editor.swagger.io/),点击页面左上角，‘file’->importFile->选择刚才下载的json文件上传-> 点击‘Generate Client’->‘点选你要生成的客户端语言’->等一下，会自动下载生成的客户端程序包
+2.生成客户端代码
+> 打开[swagger-editor](https://editor.swagger.io/),点击页面左上角，‘file’->importFile->选择刚才下载的json文件上传-> 点击‘Generate Client’->‘点选你要生成的客户端语言’->等一下，会自动下载生成的客户端程序包
 
 
-## 示例项目
+###  示例项目
 #### 1.克隆[示例代码](https://github.com/RuanHR/Spring-Boot-Project)
 ```cmd
 git clone git@github.com:RuanHR/Spring-Boot-Project.git
