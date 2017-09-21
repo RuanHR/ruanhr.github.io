@@ -27,6 +27,7 @@ TimeUtils.java
 >- getDifference ：时间差计算 return int
 >- getChineseZodiac : 获取生肖
 >- getZodiac : 获取星座
+
 注意：SimpleDateFormat不是线程安全的，线程安全需用{@code ThreadLocal<SimpleDateFormat>}
 ```java
 package com.pactera.base.utils;
