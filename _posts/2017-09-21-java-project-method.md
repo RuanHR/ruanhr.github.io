@@ -7,20 +7,18 @@ tags: [java]
 description: Java Development Related Implementation Method
 ---
 
-# Java Development Related Implementation Method
-## Author : ToniR
+### Java Development Related Implementation Method
+Author : ToniR
 ToniR's qq : 729703544<br>
 Email : rhr13591118151@gmail.com
 
-## Java Project Method List
-
-### 实体类逆向生成数据库
+#### M1: 实体类逆向生成数据库
 
 > 在mybaits中，是通过数据库生成mapper，实体，xml，将jpa与mybatis相结合，在实体类添加字段后，通过jpa的映射关系将属性对应到数据库中，在使用通用mapper的情况下不需要再去数据库中添加字段
 
 Github Address : [Spring-Boot-Generater-Reverse](https://github.com/RuanHR/Spring-Boot-Generater-Reverse)
 
-### mybatis生成实体类，通用mapper，xml文件
+#### M2: mybatis生成实体类，通用mapper，xml文件
 
 > 根据数据库，生成对应配置实体类，通用mapper，xml文件
 
