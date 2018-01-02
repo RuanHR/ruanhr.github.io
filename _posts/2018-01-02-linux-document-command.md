@@ -15,7 +15,10 @@ description: Linux文本管理类命令
 
 > ls命令可以查看，以及批量查看文件的某些信息，但是文件的状态信息还是无法查看。stat,可以查看文件的状态信息。
 
-> stat<br/>
+```linux
+stat
+```
+
 > 访问：access<br/>
 > 修改：modify（修改，指的是修改了文件的内容）<br/>
 > 改变：change，metadata(元数据)<br/>（改变，指的是改变了文件的属性，或者说元数据）<br/>
