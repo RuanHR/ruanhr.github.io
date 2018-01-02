@@ -34,7 +34,8 @@ shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
 ```
 
 >- root:x:0:0:root:/root:/bin/bash
->- 表示：用户帐号|用户密码|用户ID|用户组ID|用户名全称|用户主目录|用户所使用的shell。
+>- 表示：
+>- 用户帐号|用户密码|用户ID|用户组ID|用户名全称|用户主目录|用户所使用的shell。
 >- 该文件默认就会初始化很多用户，当shell等于/sbin/nologin时就表示该用户不能登陆。
 
 2./etc/shadow
