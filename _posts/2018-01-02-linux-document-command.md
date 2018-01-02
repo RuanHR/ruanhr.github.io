@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Linux用户和组管理
+title: Linux文本管理类命令
 date: 2018-01-02
 categories: blog
 tags: [linux]
-description: Linux用户和组管理
+description: Linux文本管理类命令
 ---
 
 # Linux--文本管理类命令
