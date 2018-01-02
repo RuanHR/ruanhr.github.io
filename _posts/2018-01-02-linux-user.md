@@ -18,7 +18,7 @@ description: Linux用户和组管理
 
 ### 配置文件
 
-1. /etc/passwd
+1./etc/passwd
 
 > /etc/passwd：保存了所有用户信息，密码使用了x表示(不是明文，加密了的)
 
@@ -37,7 +37,7 @@ shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
 >- 表示：用户帐号|用户密码|用户ID|用户组ID|用户名全称|用户主目录|用户所使用的shell。
 >- 该文件默认就会初始化很多用户，当shell等于/sbin/nologin时就表示该用户不能登陆。
 
-2. /etc/shadow
+2./etc/shadow
 
 ```linux
 cat /etc/shadow
@@ -48,7 +48,7 @@ daemon:*:15920:0:99999:7:::
 
 > 第二位为用户密码，使用了MD5加密算法，超级用户才拥有该文件读权限。
 
-3. /etc/group
+3./etc/group
 
 ```linux
 cat /etc/group
@@ -130,9 +130,8 @@ groups userName #查看用户所属组
 
 授权<br/>
 
-> chmod [option] 文件或目录
-
 ```linux
+chmod [option] 文件或目录
 chmod 777 文件目录 #授权rwxrwxrwx。
 chmod u=rwx,g=rwx,o=rwx #等同上面的授权。
 chmod o-x,g+w 文件 #文件去除其他组用户执行的权限，增加组写的权限。
