@@ -164,3 +164,77 @@ BUGS：
 Examples：使用示例
 SEE ALSO：另外参考
 ```
+
+### 修改网卡
+
+网络接口（网卡）的脚本文件ifcfg-eth0是默认的第一个网络接口，在/ect/sysconfig/network-script/目录下。如果有多个会以ifcfg-ethn命名n为（0，1，2，3，4……）
+
+```linux
+$ vim /ect/sysconfig/network-script/ifcfg-eth0
+# 参数说明
+DEVICE　　#网卡名,在`/etc/udev/rules.d/70-persistent-net.rules`有中有记录。
+HWADDR　　#MAC地址,和网卡相对应。
+USERCTL　　#[yes|no]（非root用户是否可以控制该设备）
+BOOTPROTO　　#IP的配置方法[none|static|bootp|dhcp]（|静态分配IP|BOOTP协议|DHCP协议）
+ONBOOT　　#系统启动的时候网络接口是否有效（yes/no）
+TYPE　　#网络类型（通常是Ethemet）
+NETMASK　　#网络掩码
+IPADDR　　#IP地址
+IPV6INIT　　#IPV6是否有效[yes/no]
+GATEWAY　　#默认网关IP地址
+BROADCAST　　#广播地址
+NETWORK　　#网络地址
+```
+
+### 修改主机名
+
+```linux
+$ vi /etc/sysconfig/network   #修改这个文件，系统生效
+
+# 另一种方法
+$ hostname　　　　//查看机器名
+$ hostname -i  //查看本机器名对应的ip地址
+$ hostname 新名称　　//修改主机名(临时有效)
+```
+
+### 修改hosts文件
+
+```linux
+$ vi /etc/hosts　　#修改ip和域名/主机名映射
+```
+
+### 修改默认端口
+
+1.修改配置文件：/etc/ssh/sshd_config ，找到#port 22
+2.先将Port 22 前面的 # 号去掉，并另起一行。如定义SSH端口号为21117，则输入（建议在万位的端口）
+3.修改完毕后，重启SSH服务，并退出当前连接的SSH端口
+4.退出后，重新连接一下，链接成功后可以删除22那行记录。
+
+### 禁用root本地或远程登录
+
+1.禁止root本地登录
+
+> 修改/etc/pam.d/login文件增加下面一行<br/>
+> auth required pam_succeed_if.so user != root quiet
+
+2.禁止root远程ssh登录
+
+> 修改/etc/ssh/sshd_config文件，将PermitRootLogin yes 改为no
+
+3.重新启动sshd服务
+
+### 关闭防火墙
+
+```linux
+$ service iptables XX
+$ service iptables status
+$ service iptables stop
+```
+
+防火墙是否开机自启动
+
+```linux
+$ chkconfig iptables --list
+$ vi /etc/inittab
+$ chkconfig iptables off
+```
