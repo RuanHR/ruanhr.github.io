@@ -67,14 +67,14 @@ COMMAND/CMD：#进程的命令
 
 ### 管理进程
 
-> 启动进程
+启动进程
 
 >- 前台启动：使用service 程序 start，eg：service network start。
 >- 后台程序：使用service 程序 start $，eg：service network start $。
 >- 前台启动，放入后台：正在运行的程序，按Ctrl+Z组合键。
 >- 后台进程，调回前台：使用”job -l”选项显示进程的PID，后通过fg或fg PID 命令讲后台进程调入前台执行。
 
-> 杀掉进程
+杀掉进程
 
 >- kill -1 PID #终端断线
 >- kill -2 PID #中断正在执行的程序,等于Ctrl + c
