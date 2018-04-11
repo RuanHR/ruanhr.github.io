@@ -9,6 +9,7 @@ description: java项目,gitignore文件
 
 # Git中gitignore文件
 
+### java项目忽略文件.gitignore配置
 ```yml
 target/
 !.mvn/wrapper/maven-wrapper.jar
