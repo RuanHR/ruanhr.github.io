@@ -9,7 +9,7 @@ description: mac安装软件
 
 # Mac系统安装软件教程
 
-### 安装redis注意事项
+### 一.安装redis注意事项
 
 1.下载
 
@@ -155,7 +155,7 @@ tail -f log-redis.log
 ./bin/redis-cli
 ```
 
-### 安装rabbitmq
+### 二.安装rabbitmq
 
 1.首先安装brew
 
