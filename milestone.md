@@ -6,12 +6,7 @@ header-img: "img/zhihu.jpg"
 ---
 
 
-<center>
-    <p><img src="http://7xlfkx.com1.z0.glb.clouddn.com/white2.jpg" align="center"></p>
-</center>
-
-
-### Github文章：
+## Github文章：
 
 
 - [《Java基础算法》](https://github.com/RuanHR/Java-Base)
