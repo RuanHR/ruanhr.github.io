@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Git中gitignore文件
-date: 2018-01-09
+date: 2018-04-11
 categories: blog
 tags: [git]
 description: java项目,gitignore文件
