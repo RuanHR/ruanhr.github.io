@@ -13,41 +13,41 @@ description: mac安装软件
 
 1.下载
 
-打开官网: https://redis.io/
+> 打开官网: https://redis.io/
 
 2.安装
 
-下载完成后，打开命令行工具，执行解压命令
+> 下载完成后，打开命令行工具，执行解压命令
 
 ```shell
 tar zxvf redis-3.2.8.tar.gz
 ```
 
-将解压后文件夹放到/usr/local
+> 将解压后文件夹放到/usr/local
 
 ```shell
 mv redis-3.2.8 /usr/local/
 ```
 
-切换到相应目录
+> 切换到相应目录
 
 ```shell
 cd /usr/local/redis-3.2.8/
 ```
 
-编译测试
+> 编译测试
 
 ```shell
 sudo make test
 ```
 
-编译安装
+> 编译安装
 
 ```shell
 sudo make install
 ```
 
-启动Redis
+> 启动Redis
 
 ```shell
 redis-server
@@ -56,7 +56,7 @@ redis-server
 
 3.配置
 
-在redis目录下建立bin，etc，db三个目录
+> 在redis目录下建立bin，etc，db三个目录
 
 ```shell
 sudo mkdir  /usr/local/redis-3.2.8/bin
@@ -64,7 +64,7 @@ sudo mkdir  /usr/local/redis-3.2.8/etc
 sudo mkdir  /usr/local/redis-3.2.8/db
 ```
 
-把/usr/local/redis/src目录下的mkreleasehdr.sh，redis-benchmark， redis-check-rdb， redis-cli， redis-server拷贝到bin目录
+> 把/usr/local/redis/src目录下的mkreleasehdr.sh，redis-benchmark， redis-check-rdb， redis-cli， redis-server拷贝到bin目录
 
 ```shell
 cp /usr/local/redis-3.2.8/src/mkreleasehdr.sh .
@@ -74,13 +74,13 @@ cp /usr/local/redis-3.2.8/src/redis-cli .
 cp /usr/local/redis-3.2.8/src/redis-server .
 ```
 
-拷贝 redis.conf 到 /usr/local/redis/etc下
+> 拷贝 redis.conf 到 /usr/local/redis/etc下
 
 ```shell
 cp /usr/local/redis-3.2.8/redis.conf /usr/local/redis-3.2.8/etc
 ```
 
-修改redis.conf
+> 修改redis.conf
 
 ```yml
 #修改为守护模式
@@ -137,19 +137,19 @@ appendfsync everysec
 requirepass 123456
 ```
 
-启动服务
+> 启动服务
 
 ```shell
 ./bin/redis-server etc/redis.conf
 ```
 
-查看日志
+> 查看日志
 
 ```shell
 tail -f log-redis.log
 ```
 
-打开redis客户端
+> 打开redis客户端
 
 ```shell
 ./bin/redis-cli
@@ -175,5 +175,8 @@ brew install rabbitmq
 rabbitmq-plugins enable rabbitmq_management
 ```
 
-重启rabbitmq,访问: http://127.0.0.1:15672/
-进入可视化页面,用户名guest,密码guest,设置账号和域
+3.重启rabbitmq
+
+> 访问: http://127.0.0.1:15672/
+
+> 进入可视化页面,用户名guest,密码guest,设置账号和域
