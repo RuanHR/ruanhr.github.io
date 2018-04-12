@@ -177,6 +177,12 @@ rabbitmq-plugins enable rabbitmq_management
 
 3.重启rabbitmq
 
+> 启动rabbitmq,可以设置后台启动
+
+```xml
+./rabbitmq-server  -detached
+```
+
 > 访问: http://127.0.0.1:15672/
 
 > 进入可视化页面,用户名guest,密码guest,设置账号和域
