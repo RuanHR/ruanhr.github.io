@@ -6,13 +6,12 @@
 
 ## ToniR's Blog
 
-我是阮浩然，Java开发工程师
+我是ToniR，一个java开发工程师
 
 博客：[github.com/RuanHR](https://ruanhr.github.io/)
 
 希望大家多多提意见，蟹蟹
 
-现在研习 **python 爬虫** 。
 
 ## 坚信
 
